@@ -12,8 +12,10 @@ As a user, I want to be able to:
 3. but without committing to either the final resume content
 4. or the final resume layout;
 5. Edit the content and change the layout at will
-6. And when I'm satisfied with my result, share it via a permanent public URL
-7. Also, not pay for any of those things
+6. Also be able to delete sections or layouts, just for consistecny
+8. When I'm satisfied with my result, share it via a permanent public URL
+9. And/or save it as a PDF
+10. Also, I want to not pay for any of these things
 
 ## Wireframes
 
@@ -59,7 +61,6 @@ id            PK
 user_id       integer FK
 layout_name   text
 template_id   integer FK
-is_public     boolean
 
 ### Section Layout
 layout_id     integer FK
@@ -69,6 +70,14 @@ position      ? (indicates where the section goes,
               something like L1 for 1st position left col)
 PK (layout_id, section_id)
 
-When resume is published, is_public = true.
-Then public URL: (deployment-url)/resumes/{user_name}/{layout_name}
-Resumes controller will have to figure out how to handle that.
+### Resume
+id            PK
+user_id       FK
+layout_id     FK
+resume_name   text (part of url)
+format        (html | pdf)
+
+When layout is ready, it gets published into Resume, so basically
+the same exact data. Resume table essentially just URL generator.
+Public URL: (deployment-url)/resumes/{user_name}/{resume_name}{.pdf}
+Resume controller will have to figure out how to handle that.
