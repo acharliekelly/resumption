@@ -35,47 +35,47 @@ Will create wireframes for the following views:
 ## Entities
 
 ### Users
-id            PK
-email         text, unique
-pw_digest     text
-user_name     text (adding this to schema, so public resume URL will look nicer)
+* id            PK
+* email         text, unique
+* pw_digest     text
+* user_name     text (adding this to schema, so public resume URL will look nicer)
 
 ### Section
-id            PK
-user_id       integer FK
-section_name  text
-section_type  integer FK
-content  text (MD)
+* id            PK
+* user_id       integer FK
+* section_name  text
+* section_type  integer FK
+* content  text (MD)
 
 ### Section Type (static)
-id            PK
-type_name     text
+* id            PK
+* type_name     text
 
 ### Template (static)
-id            PK
-template_name text
-content       text (CSS)
+* id            PK
+* template_name text
+* content       text (CSS)
 
 ### Layout
-id            PK
-user_id       integer FK
-layout_name   text
-template_id   integer FK
+* id            PK
+* user_id       integer FK
+* layout_name   text
+* template_id   integer FK
 
 ### Section Layout
-layout_id     integer FK
-section_id    integer FK
-position      ? (indicates where the section goes,
+* layout_id     integer FK
+* section_id    integer FK
+* position      ? (indicates where the section goes,
               so either ordering position 1-8 or else
               something like L1 for 1st position left col)
-PK (layout_id, section_id)
+* PK (layout_id, section_id)
 
 ### Resume
-id            PK
-user_id       FK
-layout_id     FK
-resume_name   text (part of url)
-format        (html | pdf)
+* id            PK
+* user_id       FK
+* layout_id     FK
+* resume_name   text (part of url)
+* format        (html | pdf)
 
 When layout is ready, it gets published into Resume, so basically
 the same exact data. Resume table essentially just URL generator.
