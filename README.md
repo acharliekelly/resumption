@@ -44,23 +44,36 @@ Will create wireframes for the following views:
 * id            PK
 * user_id       integer FK
 * section_name  text
-* section_type  integer FK
+* section_type  integer
 * content  text (MD)
 
-### Section Type (static)
-* id            PK
-* type_name     text
+### Section Types
+(don't need lookup table, just coded constants)
+0. Empty
+1. Header
+2. Contact Info
+3. Summary
+4. Skills
+5. Projects
+6. Employment
+7. Education
+8. Volunteer
+9. Interests
+10. Other (Awards, publications, etc)
 
 ### Template (static)
 * id            PK
 * template_name text
 * content       text (CSS)
+* author_name   text
+* author_url    text
 
 ### Layout
 * id            PK
 * user_id       integer FK
 * layout_name   text
 * template_id   integer FK
+* is_public     boolean
 
 ### Section Layout
 * layout_id     integer FK
@@ -70,14 +83,12 @@ Will create wireframes for the following views:
               something like L1 for 1st position left col)
 * PK (layout_id, section_id)
 
-### Resume
-* id            PK
-* user_id       FK
-* layout_id     FK
-* resume_name   text (part of url)
-* format        (html | pdf)
 
-When layout is ready, it gets published into Resume, so basically
-the same exact data. Resume table essentially just URL generator.
-Public URL: (deployment-url)/resumes/{user_name}/{resume_name}{.pdf}
-Resume controller will have to figure out how to handle that.
+Public URL: (deployment-url)/resumes/:user_name/:layout_name
+ResumeController < OpenReadController
+
+
+## MVP simplification
+
+Things I could simplify to meet MVP:
+* One-to-many Sections to Layouts
