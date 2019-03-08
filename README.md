@@ -83,12 +83,14 @@ Will create wireframes for the following views:
               something like L1 for 1st position left col)
 * PK (layout_id, section_id)
 
-
 Public URL: (deployment-url)/resumes/:user_name/:layout_name
 ResumeController < OpenReadController
-
 
 ## MVP simplification
 
 Things I could simplify to meet MVP:
 * One-to-many Sections to Layouts
+  - each section belongs to exactly one layout (for now)
+* Template table doesn't store CSS, just name. Content will just be CSS files on
+  `resumption-client/assets/styles/:template_name`
+*
