@@ -6,7 +6,7 @@ curl "http://localhost:4741/sections/${ID}" \
   --header "Content-Type: application/json" \
   --data '{
     "section": {
-      "type": '"${TYPE}"'
+      "type_id": '"${TYPE}"'
     }
   }'
 
