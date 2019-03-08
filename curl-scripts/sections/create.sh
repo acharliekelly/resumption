@@ -7,7 +7,7 @@ curl "http://localhost:4741/sections" \
   --data '{
     "section": {
       "name": "'"${NAME}"'",
-      "type_id": "'"${TYPEID}"'",
+      "type_id": "'"${TYPE}"'",
       "content": "'"${CONTENT}"'"
     }
   }'

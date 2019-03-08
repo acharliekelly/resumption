@@ -93,4 +93,3 @@ Things I could simplify to meet MVP:
   - each section belongs to exactly one layout (for now)
 * Template table doesn't store CSS, just name. Content will just be CSS files on
   `resumption-client/assets/styles/:template_name`
-*
