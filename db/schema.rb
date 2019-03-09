@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_014223) do
+ActiveRecord::Schema.define(version: 2019_03_09_172527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,29 @@ ActiveRecord::Schema.define(version: 2019_03_09_014223) do
     t.index ["user_id"], name: "index_examples_on_user_id"
   end
 
+  create_table "layouts", force: :cascade do |t|
+    t.string "layout_name"
+    t.bigint "template_id"
+    t.bigint "user_id"
+    t.boolean "is_public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["template_id"], name: "index_layouts_on_template_id"
+    t.index ["user_id"], name: "index_layouts_on_user_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "name", null: false
     t.integer "type_id"
     t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_sections_on_user_id"
+  end
+
+  create_table "sectypes", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,4 +70,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_014223) do
   end
 
   add_foreign_key "examples", "users"
+  add_foreign_key "layouts", "templates"
+  add_foreign_key "layouts", "users"
+  add_foreign_key "sections", "users"
 end

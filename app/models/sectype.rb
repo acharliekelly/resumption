@@ -1,0 +1,2 @@
+class Sectype < ApplicationRecord
+end
