@@ -1,6 +1,6 @@
 Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Resumption - Full-Stack Online Resume App
+# Resumption - Full-Stack Online Resume App (API)
 
 ## User Stories
 
@@ -63,10 +63,10 @@ Will create wireframes for the following views:
 
 ### Template (static)
 * id            PK
-* template_name text
+* template_name string
+* author_name   string
+* author_url    string
 * content       text (CSS)
-* author_name   text
-* author_url    text
 
 ### Layout
 * id            PK
@@ -91,5 +91,6 @@ ResumeController < OpenReadController
 Things I could simplify to meet MVP:
 * One-to-many Sections to Layouts
   - each section belongs to exactly one layout (for now)
-* Template table doesn't store CSS, just name. Content will just be CSS files on
-  `resumption-client/assets/styles/:template_name`
+* Template table doesn't need to store CSS, just name.
+  - instead, content will just be CSS files on `resumption-client/assets/styles/:template_name`
+* Adding a username to the users table for URL will mean the username must be unique, which means adding front-end ajax component to determine if name is available during sign-up. So instead, just make published resume URL be: `/resumes/:user_id/:layout_name`
