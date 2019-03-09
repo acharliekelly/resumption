@@ -1,5 +1,5 @@
 class SectionLayoutSerializer < ActiveModel::Serializer
   attributes :id, :position
-  has_one :section
-  has_one :layout
+  belongs_to :section
+  belongs_to :layout
 end
