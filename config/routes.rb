@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
-  resources :section_layouts
   # RESTful routes
   resources :sections, except: %i[new edit]
   resources :layouts, except: %i[new edit]
+  resources :section_layouts, except: %i[new edit]
 
   # even though templates will be static resource, still need
   # a way to create/update, so might as well implement full CRUD
-  # so I can use curl scripts
+  # so I can use curl scripts. for production, only allow GET
   resources :templates, except: %i[new edit]
 
   # Custom routes
