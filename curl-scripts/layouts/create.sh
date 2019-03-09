@@ -6,7 +6,7 @@ curl "http://localhost:4741/layouts" \
   --header "Content-Type: application/json" \
   --data '{
     "layout": {
-      "name": "'"${NAME}"'",
+      "layout_name": "'"${NAME}"'",
       "template_id": "'"${TEMPLATE}"'",
       "user_id": "'"${USER}"'"
     }
