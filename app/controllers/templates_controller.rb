@@ -46,6 +46,6 @@ class TemplatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def template_params
-      params.require(:template).permit(:name, :author, :author_url, :content)
+      params.require(:template).permit(:name, :author, :author_url, :content, :path)
     end
 end
