@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+  resources :section_layouts
   # RESTful routes
   resources :sections, except: %i[new edit]
   resources :layouts, except: %i[new edit]
