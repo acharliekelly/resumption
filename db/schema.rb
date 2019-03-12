@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_205252) do
+ActiveRecord::Schema.define(version: 2019_03_11_233525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 2019_03_09_205252) do
     t.datetime "updated_at", null: false
     t.index ["template_id"], name: "index_layouts_on_template_id"
     t.index ["user_id"], name: "index_layouts_on_user_id"
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "format"
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
   create_table "section_layouts", force: :cascade do |t|
@@ -83,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_205252) do
   add_foreign_key "examples", "users"
   add_foreign_key "layouts", "templates"
   add_foreign_key "layouts", "users"
+  add_foreign_key "resumes", "users"
   add_foreign_key "section_layouts", "layouts"
   add_foreign_key "section_layouts", "sections"
   add_foreign_key "sections", "sectypes"

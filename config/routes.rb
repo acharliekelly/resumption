@@ -2,10 +2,13 @@
 
 Rails.application.routes.draw do
   # RESTful routes
+  # MVP resource
+  resources :resumes, except: %i[new edit]
+
+  # 'stretch' resources
   resources :sections, except: %i[new edit]
   resources :layouts, except: %i[new edit]
   resources :section_layouts, except: %i[new edit]
-
   # even though templates will be static resource, still need
   # a way to create/update, so might as well implement full CRUD
   # so I can use curl scripts. for production, only allow GET

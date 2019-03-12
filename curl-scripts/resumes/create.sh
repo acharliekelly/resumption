@@ -9,8 +9,7 @@ curl "http://localhost:4741/resumes" \
       "name": "'"${NAME}"'",
       "format": "'"${FORMAT}"'",
       "content": "'"${CONTENT}"'",
-      "user_id": "'"${USER}"'",
-      "is_public": "false"
+      "user_id": "'"${USER}"'"
     }
   }'
 
