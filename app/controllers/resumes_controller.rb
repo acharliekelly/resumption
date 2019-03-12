@@ -1,4 +1,4 @@
-class ResumesController < ApplicationController
+class ResumesController < ProtectedController
   before_action :set_resume, only: [:show, :update, :destroy]
 
   # GET /resumes
