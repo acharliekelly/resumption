@@ -88,9 +88,4 @@ ResumeController < OpenReadController
 
 ## MVP simplification
 
-Things I could simplify to meet MVP:
-* One-to-many Sections to Layouts
-  - each section belongs to exactly one layout (for now)
-* Template table doesn't need to store CSS, just name.
-  - output html resume will have stylesheet tag with href="public/{{content}}"
-* Adding a username to the users table for URL will mean the username must be unique, which means adding front-end ajax component to determine if name is available during sign-up. So instead, just make published resume URL be: `/resumes/:user_id/:layout_name`
+Add `resume` entity - one-to-many with users. Enter resume as text. Implement CRUD. MVP met.
