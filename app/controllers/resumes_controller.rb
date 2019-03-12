@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class ResumesController < ProtectedController
-  before_action :set_resume, only: [:show, :update, :destroy]
+  before_action :set_resume, only: %i[show update destroy]
 
   # GET /resumes
   def index
-    @resumes = Resume.all
+    @resumes = Resume.where(current_user.id == :user_id)
 
     render json: @resumes
   end
