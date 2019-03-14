@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   resources :resumes, except: %i[new edit]
 
   # 'stretch' resources
-  resources :sections, except: %i[new edit]
-  resources :layouts, except: %i[new edit]
-  resources :section_layouts, except: %i[new edit]
-
-  get '/templates' => 'templates#index'
-  get '/templates/:id' => 'templates#show'
+  # resources :sections, except: %i[new edit]
+  # resources :layouts, except: %i[new edit]
+  # resources :section_layouts, except: %i[new edit]
+  #
+  # get '/templates' => 'templates#index'
+  # get '/templates/:id' => 'templates#show'
 
   # Custom routes
   post '/sign-up' => 'users#signup'
@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   delete '/sign-out' => 'users#signout'
   patch '/change-password' => 'users#changepw'
 
-  get '/pub/:user_id/:layout_name' => 'published#show'
+  # get '/pub/:user_id/:layout_name' => 'published#show'
 end
