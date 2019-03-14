@@ -1,21 +1,15 @@
 Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Resumption - Full-Stack Online Resume App (API)
+# Resumption - Full-Stack Online Resume App (Modified for MVP Completion)
 
 ## User Stories
 
 As a user, I want to be able to:
-1. Create a resume,
-  1. or multiple resumes,
-  2. or parts of a resume, to be combined at a later time
-2. in a format that allows for semantic markup
-3. but without committing to either the final resume content
-4. or the final resume layout;
-5. Edit the content and change the layout at will
-6. Also be able to delete sections or layouts, just for consistecny
-8. When I'm satisfied with my result, share it via a permanent public URL
-9. And/or save it as a PDF
-10. Also, I want to not pay for any of these things
+1. Create a resume, in plain text
+2. Save that resume
+3. Come back later and edit my resume
+4. Possibly delete that resume and start over
+5. That's it. There is nothing else I want to be able to do with my resume at this time.
 
 ## Wireframes
 
@@ -24,13 +18,9 @@ Will create wireframes for the following views:
 2. Signup form
 3. Login form
 4. Logged-in Dashboard view:
-  1. View your existing resumes & resume sections
-  2. Create or upload new sections
-  3. Build new layouts by
-    1. combining and ordering sections
-    2. selecting templates
-  4. Make finished layouts public
-5. Public view of finished resume
+  1. View your existing resumes
+  2. Create new resume
+
 
 ## Entities
 
@@ -38,54 +28,10 @@ Will create wireframes for the following views:
 * id            PK
 * email         text, unique
 * pw_digest     text
-* user_name     text (adding this to schema, so public resume URL will look nicer)
 
-### Section
+### Resumes
 * id            PK
 * user_id       integer FK
-* section_name  text
-* section_type  integer
-* content  text (MD)
-
-### Section Types
-(don't need lookup table, just coded constants)
-0. Empty
-1. Header
-2. Contact Info
-3. Summary
-4. Skills
-5. Projects
-6. Employment
-7. Education
-8. Volunteer
-9. Interests
-10. Other (Awards, publications, etc)
-
-### Template (static)
-* id            PK
-* template_name string
-* author_name   string
-* author_url    string
-* content       text (CSS)
-
-### Layout
-* id            PK
-* user_id       integer FK
-* layout_name   text
-* template_id   integer FK
-* is_public     boolean
-
-### Section Layout
-* layout_id     integer FK
-* section_id    integer FK
-* position      ? (indicates where the section goes,
-              so either ordering position 1-8 or else
-              something like L1 for 1st position left col)
-* PK (layout_id, section_id)
-
-Public URL: (deployment-url)/resumes/:user_name/:layout_name
-ResumeController < OpenReadController
-
-## MVP simplification
-
-Add `resume` entity - one-to-many with users. Enter resume as text. Implement CRUD. MVP met.
+* name          string
+* format        (text | md | html)
+* content       text
