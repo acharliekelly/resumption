@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   patch '/change-password' => 'users#changepw'
 
   get '/pub/:user_id/:layout_name' => 'published#show'
+
+  get '/section-html/:id' => 'sections#show_html'
+
+  get '/resume-html/:id' => 'resumes#display'
 end
