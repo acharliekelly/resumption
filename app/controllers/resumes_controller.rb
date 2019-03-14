@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ResumesController < ProtectedController
-  before_action :set_resume, only: %i[show update destroy]
+  before_action :set_resume, only: %i[show display update destroy]
 
   # GET /resumes
   def index
@@ -13,6 +13,11 @@ class ResumesController < ProtectedController
   # GET /resumes/1
   def show
     render json: @resume
+  end
+
+  # GET /resume-html/1
+  def display
+    render json: @resume, serializer: ResumeHtmlSerializer
   end
 
   # POST /resumes

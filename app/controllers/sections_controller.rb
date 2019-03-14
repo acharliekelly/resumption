@@ -13,6 +13,10 @@ class SectionsController < ApplicationController
     render json: @section
   end
 
+  def show_html
+    render html: @section, serializer: SectionHtmlSerializer
+  end
+
   # POST /sections
   def create
     @section = Section.new(section_params)
