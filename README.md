@@ -2,25 +2,6 @@ Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44
 
 # Resumption - Full-Stack Online Resume App (Modified for MVP Completion)
 
-## User Stories
-
-As a user, I want to be able to:
-1. Create a resume, in plain text
-2. Save that resume
-3. Come back later and edit my resume
-4. Possibly delete that resume and start over
-5. That's it. There is nothing else I want to be able to do with my resume at this time.
-
-## Wireframes
-
-Will create wireframes for the following views:
-1. Initial/Logged-out screen
-2. Signup form
-3. Login form
-4. Logged-in Dashboard view:
-  1. View your existing resumes
-  2. Create new resume
-
 
 ## Entities
 
