@@ -5,7 +5,7 @@ class ResumesController < ProtectedController
 
   # GET /resumes
   def index
-    @resumes = Resume.where(current_user.id == :user_id)
+    @resumes = Resume.where(user: current_user.id)
 
     render json: @resumes
   end
@@ -18,6 +18,7 @@ class ResumesController < ProtectedController
   # POST /resumes
   def create
     @resume = Resume.new(resume_params)
+    # current_user.resumes.build(resume_params)
 
     if @resume.save
       render json: @resume, status: :created, location: @resume
