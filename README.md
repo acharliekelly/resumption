@@ -3,10 +3,10 @@ Rails[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44
 # Resumption - Full-Stack Online Resume App (Modified for MVP Completion)
 
 Links:
-[GitHub API](https://github.com/acharliekelly/resumption-api)
-[GitHub Client](https://github.com/acharliekelly/resumption-client)
-[Deployed API](https://boiling-hollows-87968.herokuapp.com/)
-[Deployed Client](https://acharliekelly.github.io/resumption-client)
+* [GitHub API](https://github.com/acharliekelly/resumption-api)
+* [GitHub Client](https://github.com/acharliekelly/resumption-client)
+* [Deployed API](https://boiling-hollows-87968.herokuapp.com/)
+* [Deployed Client](https://acharliekelly.github.io/resumption-client)
 
 
 ## Entities
