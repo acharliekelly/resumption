@@ -5,7 +5,7 @@ class ResumesController < ProtectedController
 
   # GET /resumes
   def index
-    @resumes = Resume.where(user: current_user.id)
+    @resumes = current_user.resumes
 
     render json: @resumes
   end
