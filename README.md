@@ -30,9 +30,13 @@ I have an ERD, but I just realized it's for the original design, which was much 
 [ERD](https://drive.google.com/file/d/10s0px9Lhax3YNcgGKUVZGHs3wmhTA8Id/view?usp=sharing)
 
 ## Technologies Used
+
+### Back End
 * Ruby
 * Rails
 * PostgreSQL
+
+### Front End
 * HTML
 * SCSS
 * jQuery
