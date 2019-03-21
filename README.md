@@ -25,7 +25,7 @@ Links:
 
 ## ERD
 
-I have an ERD, but I just realized it's for the original design, which was much more complicated than the MVP design. So, just squint a little bit when looking at it.
+My ERD contains the schemas for both my development and MVP branches. All the database objects are present in both branches, but I commented out the unused routes in the `config/routes.rb` file of my MVP branch.
 
 [ERD](https://drive.google.com/file/d/10s0px9Lhax3YNcgGKUVZGHs3wmhTA8Id/view?usp=sharing)
 
